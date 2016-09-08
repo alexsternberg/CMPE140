@@ -1,0 +1,64 @@
+`timescale 1ns / 1ps
+
+module divider_tb;
+
+reg [3:0] did, dir;
+reg go, clk, rst;
+wire [3:0] rem, quo;
+wire [2:0] cs;
+wire done, err;
+integer i, j;
+
+divider DUT (.did(did), .dir(dir), .go(go), .clk(clk), .rst(rst), .rem(rem), .quo(quo), .cs(cs), .done(done), .err(err) );
+
+initial
+begin
+    clk=0;//reset
+    rst=1;
+    #5rst=0;
+    go=1;
+    #5clk=1;
+    #5clk=0;
+
+    for(i=0; i<16; i=i+1)
+        begin
+        did=i;
+
+        for(j=0; j<16; j=j+1)
+            begin
+            dir=j;
+            while(!done)
+                begin
+                #5clk=1;
+                #5clk=0;
+                end
+
+                if(dir == 4'b0000)  begin
+                    if(!err) begin
+                        $display("Error with Dividing by Zero");
+                        $finish;
+                    end//if err
+                end//zero error
+                else    begin
+                    if(quo !== (did / dir)) begin
+                        $display("Error with Quotient!");
+                        $finish;
+                    end//if quo
+
+                    if(rem !== did - ( dir * (did / dir) ) ) begin
+                        $display("Error with Remainder!");
+                        $finish;
+                    end//if rem
+                end//result error
+
+            #5clk=1;
+            #5clk=0;
+
+            end//divisor
+        end//dividend
+
+    $display("Test Successful");
+    $finish;
+end
+
+endmodule///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////divider_tb
