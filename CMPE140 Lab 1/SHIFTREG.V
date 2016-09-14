@@ -1,4 +1,4 @@
-module SHIFTREG #(parameter WIDTH=4)(
+odule SHIFTREG #(parameter WIDTH=4)(
         input inl, inr,
         input [WIDTH-1:0] d,
         input ld, sr, sl, rst, clk,

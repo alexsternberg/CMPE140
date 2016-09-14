@@ -1,0 +1,10 @@
+Output: WEBENCH Simulation Engine
+Type  : WBSENetlist
+From  : Project [CMPE140 Lab 1.PrjFpg]
+   Generated File[CMPE140 Lab 1.nti]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 10:50:04 PM On 9/7/2016
