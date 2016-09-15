@@ -2,13 +2,13 @@
 # Webtalk v2016.2 (64-bit)
 # SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
 # IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
-# Start of session at: Wed Sep 14 00:59:22 2016
-# Process ID: 7180
+# Start of session at: Wed Sep 14 17:43:38 2016
+# Process ID: 25708
 # Current directory: F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav
-# Command line: wbtcv.exe -mode batch -source F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav/xsim.dir/DP_TB_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav/xsim.dir/TOP_TB_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav/webtalk.log
 # Journal file: F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav\webtalk.jou
 #-----------------------------------------------------------
 source F:/School/CMPE140/CMPE140 -notrace
 couldn't read file "F:/School/CMPE140/CMPE140": permission denied
-INFO: [Common 17-206] Exiting Webtalk at Wed Sep 14 00:59:22 2016...
+INFO: [Common 17-206] Exiting Webtalk at Wed Sep 14 17:43:38 2016...

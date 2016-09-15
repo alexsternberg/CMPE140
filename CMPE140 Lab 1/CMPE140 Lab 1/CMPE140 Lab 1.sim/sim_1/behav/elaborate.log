@@ -1,6 +1,6 @@
 Vivado Simulator 2016.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 2a2989a08cda4e2ba7499a7ea455999f --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot DP_TB_behav xil_defaultlib.DP_TB xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 2a2989a08cda4e2ba7499a7ea455999f --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TOP_TB_behav xil_defaultlib.TOP_TB xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -9,6 +9,7 @@ WARNING: [XSIM 43-4100] "F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 L
 WARNING: [XSIM 43-4100] "F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.CU
 Compiling module xil_defaultlib.DOWNCOUNTER
 Compiling module xil_defaultlib.MUL
 Compiling module xil_defaultlib.CMP
@@ -16,6 +17,7 @@ Compiling module xil_defaultlib.MUX
 Compiling module xil_defaultlib.REGISTER
 Compiling module xil_defaultlib.BUF
 Compiling module xil_defaultlib.DP
-Compiling module xil_defaultlib.DP_TB
+Compiling module xil_defaultlib.TOP
+Compiling module xil_defaultlib.TOP_TB
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot DP_TB_behav
+Built simulation snapshot TOP_TB_behav

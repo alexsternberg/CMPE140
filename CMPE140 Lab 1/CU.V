@@ -10,34 +10,46 @@ input  GO;
 input  CLK;
 output reg DONE;
 output reg MUX;
-output REG_LD;
-output CNT_EN;
-output CNT_LD;
+output reg REG_LD;
+output reg CNT_EN;
+output reg CNT_LD;
 
 parameter S0 = 1'b0,
           S1 = 1'b1;
 
 reg CS;
 
-assign {REG_LD, CNT_LD, CNT_EN} =
-       CS == S0 ? 3'b110:
-                  3'b101;
+initial begin
+    CS = 0;
+    DONE = 0;
+    MUX = 0;
+    CNT_LD = 1;
+    CNT_EN = 0;
+end
 
 always@(posedge CLK)
 begin
-       case(CS)
-             S0: begin
-                 MUX = 1;
-                 DONE = 0;
-                 CS = GO ? S1 : S0;
-             end
-             S1: begin
-                 MUX = 0;
-                 DONE = GT;
-                 CS = GT ? S0 : S1;
-             end
-       endcase
+
+    case(CS)
+         S1: begin
+             MUX = 1;
+             DONE = ~GT;
+             CS = GT;
+             CNT_EN = CS;
+         end
+         default: begin
+             DONE = 0;
+             CS = GO;
+             MUX = 0;
+             CNT_EN = 0;
+         end
+    endcase
+
+REG_LD = 1;
+CNT_LD = ~CS;
+
 end
+
 
 
 endmodule

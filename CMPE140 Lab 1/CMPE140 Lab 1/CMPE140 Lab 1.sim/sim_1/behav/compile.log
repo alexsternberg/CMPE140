@@ -10,9 +10,13 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/CMP
 INFO: [VRFC 10-311] analyzing module CMP
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/BUF.V" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module BUF
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/CU.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CU
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/DP.V" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module DP
-INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/DP_TB.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module DP_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TOP
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TOP_TB
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
