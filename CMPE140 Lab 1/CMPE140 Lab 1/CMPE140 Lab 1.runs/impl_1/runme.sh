@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.runs/synth_1'
+HD_PWD='C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,8 @@ EAStep()
      fi
 }
 
-EAStep vivado -log TOP.vds -m64 -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+# pre-commands:
+/bin/touch .init_design.begin.rst
+EAStep vivado -log TOP.vdi -applog -m64 -messageDb vivado.pb -mode batch -source TOP.tcl -notrace
+
+
