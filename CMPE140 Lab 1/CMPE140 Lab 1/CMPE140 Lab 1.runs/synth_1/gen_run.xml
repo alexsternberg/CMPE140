@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1473840040">
-  <File Type="RDS-PROPCONSTRS" Name="DP_TB_drc_synth.rpt"/>
-  <File Type="PA-TCL" Name="DP_TB.tcl"/>
-  <File Type="RDS-RDS" Name="DP_TB.vds"/>
-  <File Type="RDS-UTIL" Name="DP_TB_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="DP_TB_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="DP_TB.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="DP_TB_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="DP_TB_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1473905171">
+  <File Type="RDS-PROPCONSTRS" Name="TOP_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="TOP.tcl"/>
+  <File Type="RDS-RDS" Name="TOP.vds"/>
+  <File Type="RDS-UTIL" Name="TOP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="TOP_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="TOP.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TOP_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TOP_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../REGISTER.V">
@@ -52,14 +52,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../DP.V">
+    <File Path="$PSRCDIR/sources_1/new/lib.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/DP_TB.v">
+    <File Path="$PPRDIR/../DP.V">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -68,13 +68,27 @@
     </File>
     <File Path="$PPRDIR/../CU.V">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/TOP.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/TOP_TB.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/DP_TB.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -92,7 +106,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="DP_TB"/>
+      <Option Name="TopModule" Val="TOP"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

@@ -21,16 +21,18 @@ read_verilog -library xil_defaultlib {
   {F:/School/CMPE140/CMPE140 Lab 1/DOWNCOUNTER.V}
   {F:/School/CMPE140/CMPE140 Lab 1/CMP.V}
   {F:/School/CMPE140/CMPE140 Lab 1/BUF.V}
+  {F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v}
   {F:/School/CMPE140/CMPE140 Lab 1/DP.V}
-  {F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/DP_TB.v}
+  {F:/School/CMPE140/CMPE140 Lab 1/CU.V}
+  {F:/School/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v}
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
 
-synth_design -top DP_TB -part xc7a100tcsg324-1
+synth_design -top TOP -part xc7a100tcsg324-1
 
 
-write_checkpoint -force -noxdef DP_TB.dcp
+write_checkpoint -force -noxdef TOP.dcp
 
-catch { report_utilization -file DP_TB_utilization_synth.rpt -pb DP_TB_utilization_synth.pb }
+catch { report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb }

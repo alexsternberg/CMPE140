@@ -20,18 +20,13 @@ set_property -dict { PACKAGE_PIN E3 IOSTANDARD LVCMOS33 } [get_ports { clk100MHz
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {clk100MHz}];
 
 # Slide switches
-set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { divisor[0] }];
-set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { divisor[1] }];
-set_property -dict { PACKAGE_PIN M13   IOSTANDARD LVCMOS33 } [get_ports { divisor[2] }];
-set_property -dict { PACKAGE_PIN R15   IOSTANDARD LVCMOS33 } [get_ports { divisor[3] }];
-set_property -dict { PACKAGE_PIN H6 IOSTANDARD LVCMOS33 } [get_ports { dividend[0] }];
-set_property -dict { PACKAGE_PIN U12   IOSTANDARD LVCMOS33 } [get_ports { dividend[1] }];
-set_property -dict { PACKAGE_PIN U11   IOSTANDARD LVCMOS33 } [get_ports { dividend[2] }];
-set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { dividend[3] }];
+set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { INPUT[0] }];
+set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { INPUT[1] }];
+set_property -dict { PACKAGE_PIN M13   IOSTANDARD LVCMOS33 } [get_ports { INPUT[2] }];
+set_property -dict { PACKAGE_PIN R15   IOSTANDARD LVCMOS33 } [get_ports { INPUT[3] }];
 
 # LEDs
-set_property -dict { PACKAGE_PIN V14   IOSTANDARD LVCMOS33 } [get_ports { err }];
-set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { done }];
+set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { DONE }];
 
 # 7-segment display
 # Segment cathodes (common to all digits)
@@ -57,5 +52,5 @@ set_property -dict { PACKAGE_PIN U13   IOSTANDARD LVCMOS33 } [get_ports { LEDSEL
 # Active low
 set_property -dict { PACKAGE_PIN M18   IOSTANDARD LVCMOS33 } [get_ports { rst }];
 set_property -dict { PACKAGE_PIN M17   IOSTANDARD LVCMOS33 } [get_ports { pb }];
-set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { go }];
+set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { GO }];
 
