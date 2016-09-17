@@ -56,27 +56,22 @@ input [3:0] in,
 output reg [6:0] out
 );
 
-always @ (out) begin
-    get_digit(in,out);
-end//always
-
-task get_digit;
-	input [3:0] A;
-	output reg [6:0] s;
-    	case (A) // s[0] thru s[6] are active low
-        	4'b0000: begin s[0]=0; s[1]=0; s[2]=0; s[3]=1; s[4]=0; s[5]=0; s[6]=0; end
-        	4'b0001: begin s[0]=1; s[1]=0; s[2]=1; s[3]=1; s[4]=0; s[5]=1; s[6]=1; end
-        	4'b0010: begin s[0]=0; s[1]=1; s[2]=0; s[3]=0; s[4]=0; s[5]=1; s[6]=0; end
-        	4'b0011: begin s[0]=0; s[1]=0; s[2]=1; s[3]=0; s[4]=0; s[5]=1; s[6]=0; end
-        	4'b0100: begin s[0]=1; s[1]=0; s[2]=1; s[3]=0; s[4]=0; s[5]=0; s[6]=1; end
-        	4'b0101: begin s[0]=0; s[1]=0; s[2]=1; s[3]=0; s[4]=1; s[5]=0; s[6]=0; end
-        	4'b0110: begin s[0]=0; s[1]=0; s[2]=0; s[3]=0; s[4]=1; s[5]=0; s[6]=0; end
-        	4'b0111: begin s[0]=1; s[1]=0; s[2]=1; s[3]=1; s[4]=0; s[5]=1; s[6]=0; end
-        	4'b1000: begin s[0]=0; s[1]=0; s[2]=0; s[3]=0; s[4]=0; s[5]=0; s[6]=0; end
-        	4'b1001: begin s[0]=0; s[1]=0; s[2]=1; s[3]=0; s[4]=0; s[5]=0; s[6]=0; end
-        	default: begin s[0]=1; s[1]=1; s[2]=1; s[3]=1; s[4]=1; s[5]=1; s[6]=1; end
+always @ (in) begin
+    case (in) // out[0] thru out[6] are active low
+        	4'b0000: begin out[0]=0; out[1]=0; out[2]=0; out[3]=1; out[4]=0; out[5]=0; out[6]=0; end
+        	4'b0001: begin out[0]=1; out[1]=0; out[2]=1; out[3]=1; out[4]=0; out[5]=1; out[6]=1; end
+        	4'b0010: begin out[0]=0; out[1]=1; out[2]=0; out[3]=0; out[4]=0; out[5]=1; out[6]=0; end
+        	4'b0011: begin out[0]=0; out[1]=0; out[2]=1; out[3]=0; out[4]=0; out[5]=1; out[6]=0; end
+        	4'b0100: begin out[0]=1; out[1]=0; out[2]=1; out[3]=0; out[4]=0; out[5]=0; out[6]=1; end
+        	4'b0101: begin out[0]=0; out[1]=0; out[2]=1; out[3]=0; out[4]=1; out[5]=0; out[6]=0; end
+        	4'b0110: begin out[0]=0; out[1]=0; out[2]=0; out[3]=0; out[4]=1; out[5]=0; out[6]=0; end
+        	4'b0111: begin out[0]=1; out[1]=0; out[2]=1; out[3]=1; out[4]=0; out[5]=1; out[6]=0; end
+        	4'b1000: begin out[0]=0; out[1]=0; out[2]=0; out[3]=0; out[4]=0; out[5]=0; out[6]=0; end
+        	4'b1001: begin out[0]=0; out[1]=0; out[2]=1; out[3]=0; out[4]=0; out[5]=0; out[6]=0; end
+        	default: begin out[0]=1; out[1]=1; out[2]=1; out[3]=1; out[4]=1; out[5]=1; out[6]=1; end
     	endcase
-	endtask//task    
+end//always
+ 
 endmodule//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////bcd_to_7seg
 
 module led_mux (  
@@ -115,7 +110,7 @@ begin
    	 3'd5: led_ctrl <= {8'b11011111, LED2}; 	 
    	 3'd6: led_ctrl <= {8'b10111111, LED1}; 	 
    	 3'd7: led_ctrl <= {8'b01111111, LED0}; 	 
-    default: led_ctrl <= {8'b11111111, 8'hFF};	 
+     default: led_ctrl <= {8'b11111111, 8'hFF};	 
 endcase
 end
 endmodule/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////led_mux
