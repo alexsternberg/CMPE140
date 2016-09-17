@@ -3,7 +3,7 @@
 // Created   9/7/2016 10:22:08 PM
 ////////////////////////////////////////////////////////////////////////////////
 
-module BUF #(parameter width = 32)(OE, O, I);
+module BUFFER #(parameter width = 32)(OE, O, I);
 
 input  OE;
 output [width-1:0] O;
