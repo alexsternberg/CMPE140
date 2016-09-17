@@ -1,20 +1,3 @@
-;...............................................................................
-;Constraints File
-;   Device  :
-;   Board   :
-;   Project :
-;
-;   Created 8/23/2013
-;...............................................................................
-
-;...............................................................................
-Record=FileHeader | Id=DXP Constraints v1.0
-;...............................................................................
-
-
-Record=Constraint | TargetKind=Part | TargetId=XC7A100T-1FGG676C
-
-
 # Clock signal (100 MHz)
 set_property -dict { PACKAGE_PIN E3 IOSTANDARD LVCMOS33 } [get_ports { clk100MHz }];
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {clk100MHz}];
@@ -27,6 +10,7 @@ set_property -dict { PACKAGE_PIN R15   IOSTANDARD LVCMOS33 } [get_ports { INPUT[
 
 # LEDs
 set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { DONE }];
+set_property -dict { PACKAGE_PIN H17   IOSTANDARD LVCMOS33 } [get_ports { GO }];
 
 # 7-segment display
 # Segment cathodes (common to all digits)
@@ -52,5 +36,5 @@ set_property -dict { PACKAGE_PIN U13   IOSTANDARD LVCMOS33 } [get_ports { LEDSEL
 # Active low
 set_property -dict { PACKAGE_PIN M18   IOSTANDARD LVCMOS33 } [get_ports { rst }];
 set_property -dict { PACKAGE_PIN M17   IOSTANDARD LVCMOS33 } [get_ports { pb }];
-set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { GO }];
+set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { GO }];
 
