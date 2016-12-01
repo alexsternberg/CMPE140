@@ -1,16 +1,16 @@
 module gpio_top(
-	input clk, rst, we,
-	input [1:0] a,
-	input [31:0] gpi1, gpi2, wd,
-	output [31:0] gpo1, gpo2, rd
+    input clk, rst, we,
+    input [1:0] a,
+    input [31:0] gpi1, gpi2, wd,
+    output [31:0] gpo1, gpo2, rd
 );
-	wire we1, we2;
-	wire [1:0] rdsel;
-	wire [31:0] 
-	
-	gpio_ad(we, a, we1, we2, rdsel)
-	flopenr reg_gpo1(clk, rst, we1, wd, )
+    wire we1, we2;
+    wire [1:0] rdsel;
 
-always @ (posedge clk) begin
-	
-end
+
+    gpio_ad  gpiodec(we, a, we1, we2, rdsel);
+    flopenr reg_gpo1(clk, rst, we1, wd, gpo1);
+    flopenr reg_gpo2(clk, rst, we2, wd, gpo2);
+    mux4      output(gpi1, gpi2, gpo1, gpo2, rdsel, rd);
+
+endmodule

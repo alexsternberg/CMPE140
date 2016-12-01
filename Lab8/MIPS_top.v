@@ -15,23 +15,23 @@
 // MIPS Top-level Module (including the memories, clock,
 // and the display module for prototyping)
 module mips_top(
-	input	clk, reset, 
-	output	memwrite,
-	output	[ 7:0] 	LEDSEL, 
-	output 	[ 7:0]	LEDOUT,
-	input	[ 7:0]	switches,
-	output	sinkBit 
-	
-	);
+    input   clk, reset, 
+    output  memwrite,
+    output  [ 7:0]  LEDSEL, 
+    output  [ 7:0]  LEDOUT,
+    input   [ 7:0]  switches,
+    output  sinkBit 
+    
+    );
 
-	wire	[31:0] 	pc, instr, dataadr, writedata, readdata, dispDat;
-	wire 	clksec;
-	reg		[ 15:0] 	reg_hex;
-	
-	wire clk_5KHz;
+    wire    [31:0]  pc, instr, dataadr, writedata, readdata, dispDat;
+    wire    clksec;
+    reg     [15:0]     reg_hex;
+    
+    wire clk_5KHz;
 
-	// Clock (1 second) to slow down the running of the instructions
-	//clk_gen top_clk(.clk50MHz(clk), .reset(reset), .clksec(clksec));
+    // Clock (1 second) to slow down the running of the instructions
+    //clk_gen top_clk(.clk50MHz(clk), .reset(reset), .clksec(clksec));
 
     clk_gen top_clk(
         .clk100MHz(clk),
@@ -42,12 +42,18 @@ module mips_top(
         
 
       
-	// Instantiate processor and memories	
-	mips 	mips	(clksec, reset, pc, instr, 
-					memwrite, dataadr, writedata, readdata, switches[4:0], dispDat);
-	imem 	imem	(pc[7:2], instr);
-	dmem	dmem	(clk, memwrite, dataadr, writedata, readdata);
-	
+    // Instantiate processor and memories   
+    mips    mips    (clksec, reset, pc, instr, 
+                    memwrite, dataadr, writedata, readdata, switches[4:0], dispDat);
+    imem    imem    (pc[7:2], instr);
+
+
+
+
+
+
+    dmem    dmem    (clk, memwrite, dataadr, writedata, readdata);
+    
 //=======================================================================================================================
 //=======================================================================================================================
 
@@ -84,7 +90,7 @@ module mips_top(
         LEDOUT,
         LEDSEL        
         );
-	
+    
 /*
     7:5 = 000 : Display LSW of register selected by DSW 4:0
     7:5 = 001 : Display MSW of register selected by DSW 4:0
@@ -94,23 +100,23 @@ module mips_top(
     7:5 = 101 : Display MSW of dataaddr
     7:5 = 110 : Display LSW of writedata
     7:5 = 111 : Display MSW of writedata
-*/	
-	
-	always @ (posedge clk) 
-	begin
-		case ({switches[7],switches[6], switches[5]})
-			3'b000:	reg_hex = dispDat[15:0];
-			3'b001:	reg_hex = dispDat[31:16];
-			3'b010:	reg_hex = instr[15:0];
-			3'b011:	reg_hex = instr[31:16];
-			3'b100:	reg_hex = dataadr[15:0];
-			3'b101:	reg_hex = dataadr[31:16];
-			3'b110:	reg_hex = writedata[15:0];
-            3'b111:	reg_hex = writedata[31:16];
-			endcase
-	end		
+*/  
+    
+    always @ (posedge clk) 
+    begin
+        case ({switches[7],switches[6], switches[5]})
+            3'b000: reg_hex = dispDat[15:0];
+            3'b001: reg_hex = dispDat[31:16];
+            3'b010: reg_hex = instr[15:0];
+            3'b011: reg_hex = instr[31:16];
+            3'b100: reg_hex = dataadr[15:0];
+            3'b101: reg_hex = dataadr[31:16];
+            3'b110: reg_hex = writedata[15:0];
+            3'b111: reg_hex = writedata[31:16];
+            endcase
+    end     
 
-	//sink unused bit(s) to knock down the number of warning messages
-	assign sinkBit = (pc > 0) ^ (instr > 0) ^ (dataadr > 0) ^ (writedata > 0) ^ 
-					 (readdata > 0) ^ (dispDat > 0);
+    //sink unused bit(s) to knock down the number of warning messages
+    assign sinkBit = (pc > 0) ^ (instr > 0) ^ (dataadr > 0) ^ (writedata > 0) ^ 
+                     (readdata > 0) ^ (dispDat > 0);
 endmodule
