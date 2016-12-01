@@ -1,50 +1,31 @@
-module DP(
-        input clk, rst,
-        input [3:0] did,
-        input [3:0] dir,
-        input [3:0] n,
-        output [4:0] rem,
-        output [3:0] quo,
-        output [3:0] cnt,
-        output lt,
-        output error_int,
-        input s1,
-        input shr_r, shl_r, ld_r,
-        input shr_x, shl_x, inr_x, ld_x,
-        input shr_y, shl_y, ld_y,
-        input s2, s3, cnt_en, cnt_ld, cnt_ud
-    );
-    wire [4:0] w1; //sub to MUX_IN
-    wire [4:0] w2; //MUX_IN to R_SR
-    wire [4:0] w3; //R_SR to output MUX_R
-    wire [3:0] w4; //X_SR to output MUX_Q
-    wire [3:0] w5; // Y_SR to places
+////////////////////////////////////////////////////////////////////////////////
+// SubModule DP
+// Created   9/7/2016 10:47:17 PM
+////////////////////////////////////////////////////////////////////////////////
 
-    assign error_int = !dir ? 1: 0;
+module DP (DONE, INPUT, MUX, REG_LD, CNT_EN, CNT_LD, GT, OUTPUT, CLK);
 
-    mux2 #(5)           m1(s1, w1, 5'b00000, w2);
-    SR #(5)             r(1'b0, w4[3], w2, ld_r, shr_r, shl_r,  rst, clk, w3);
-    SR                  x(1'b0, inr_x, did, ld_x,  shr_x, shl_x, rst, clk, w4);
-    SR                  y(1'b0, 1'b0, dir, ld_y, shr_y, shl_y, rst, clk, w5);
-    comp #(4)           comp(w3[3:0], w5, lt);
-    sub                 sub(w3[3:0], w5, w1);
-    mux2                m2(s2, w3, 5'b00000, rem);
-    mux2                m3(s3, w4, 4'b0000, quo);
-    ud_counter          c(n, rst, cnt_en, cnt_ld, cnt_ud, clk, cnt);
-endmodule/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////DP
+input  DONE;
+input [31:0] INPUT;
+input  MUX;
+input  REG_LD;
+input  CNT_EN;
+input  CNT_LD;
+output GT;
+output [31:0] OUTPUT;
+input CLK;
 
+wire [31:0] w1; //Counter to Multiplier, Comparator
+wire [31:0] w2; //Multiplier to Mux
+wire [31:0] w3; //Mux to Register
+wire [31:0] w4; //Register to Multiplier, Buffer
 
+DOWNCOUNTER #(32)   U1(CLK, INPUT, CNT_LD, CNT_EN, w1);
+MUL         #(32)   U2(w2, w4, w1);
+CMP         #(32)   U3(1, w1, GT);
+MUX         #(32)   U4(MUX, 1, w2, w3);
+REGISTER    #(32)   U5(REG_LD, CLK, w4, w3);
+BUFFER      #(32)   U6(DONE, OUTPUT, w4);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+endmodule
+////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../../REGISTER.V"
+verilog xil_defaultlib  "../../../../MUX.V"
+verilog xil_defaultlib  "../../../../MUL.V"
+verilog xil_defaultlib  "../../../../DOWNCOUNTER.V"
+verilog xil_defaultlib  "../../../../CMP.V"
+verilog xil_defaultlib  "../../../../BUF.V"
+verilog xil_defaultlib  "../../../../DP.V"
+verilog xil_defaultlib  "../../../CMPE140 Lab 1.srcs/sources_1/new/DP_TB.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

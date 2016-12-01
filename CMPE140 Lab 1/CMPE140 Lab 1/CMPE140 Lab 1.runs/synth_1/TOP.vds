@@ -1,0 +1,109 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Wed Sep 14 20:37:29 2016
+# Process ID: 8168
+# Current directory: C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.runs/synth_1
+# Command line: vivado.exe -log TOP.vds -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
+# Log file: C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.runs/synth_1/TOP.vds
+# Journal file: C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source TOP.tcl -notrace
+Command: synth_design -top TOP -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6096 
+CRITICAL WARNING: [Synth 8-2490] overwriting previous definition of module BUF [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/BUF.V:6]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 283.684 ; gain = 77.438
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'TOP' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:1]
+INFO: [Synth 8-638] synthesizing module 'CU' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CU.V:6]
+	Parameter S0 bound to: 1'b0 
+	Parameter S1 bound to: 1'b1 
+INFO: [Synth 8-256] done synthesizing module 'CU' (1#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CU.V:6]
+INFO: [Synth 8-638] synthesizing module 'DP' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/DP.V:6]
+INFO: [Synth 8-638] synthesizing module 'DOWNCOUNTER' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/DOWNCOUNTER.V:6]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'DOWNCOUNTER' (2#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/DOWNCOUNTER.V:6]
+INFO: [Synth 8-638] synthesizing module 'MUL' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/MUL.V:6]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'MUL' (3#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/MUL.V:6]
+INFO: [Synth 8-638] synthesizing module 'CMP' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMP.V:6]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'CMP' (4#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMP.V:6]
+INFO: [Synth 8-638] synthesizing module 'MUX' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/MUX.V:6]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'MUX' (5#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/MUX.V:6]
+INFO: [Synth 8-638] synthesizing module 'REGISTER' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/REGISTER.V:6]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'REGISTER' (6#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/REGISTER.V:6]
+INFO: [Synth 8-638] synthesizing module 'BUF' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/BUF.V:6]
+	Parameter width bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'BUF' (7#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/BUF.V:6]
+INFO: [Synth 8-256] done synthesizing module 'DP' (8#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/DP.V:6]
+WARNING: [Synth 8-689] width (4) of port connection 'INPUT' does not match port width (32) of module 'DP' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:19]
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:32]
+	Parameter width bound to: 16 - type: integer 
+	Parameter shift_max bound to: 65535 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (9#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:32]
+INFO: [Synth 8-638] synthesizing module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:123]
+INFO: [Synth 8-256] done synthesizing module 'bin2bcd32' (10#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:123]
+WARNING: [Synth 8-689] width (7) of port connection 'dig0' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+WARNING: [Synth 8-689] width (7) of port connection 'dig1' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+WARNING: [Synth 8-689] width (7) of port connection 'dig2' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+WARNING: [Synth 8-689] width (7) of port connection 'dig3' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+WARNING: [Synth 8-689] width (7) of port connection 'dig4' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+WARNING: [Synth 8-689] width (7) of port connection 'dig5' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+WARNING: [Synth 8-689] width (7) of port connection 'dig6' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+WARNING: [Synth 8-689] width (7) of port connection 'dig7' does not match port width (4) of module 'bin2bcd32' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:23]
+INFO: [Synth 8-638] synthesizing module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:54]
+WARNING: [Synth 8-567] referenced signal 'in' should be on the sensitivity list [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:59]
+INFO: [Synth 8-256] done synthesizing module 'bcd_to_7seg' (11#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:54]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:25]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:26]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:27]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:28]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:29]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:30]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:31]
+WARNING: [Synth 8-689] width (7) of port connection 'in' does not match port width (4) of module 'bcd_to_7seg' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:32]
+INFO: [Synth 8-638] synthesizing module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:82]
+INFO: [Synth 8-226] default block is never used [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:109]
+INFO: [Synth 8-256] done synthesizing module 'led_mux' (12#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/lib.v:82]
+WARNING: [Synth 8-689] width (7) of port connection 'LED0' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-689] width (7) of port connection 'LED1' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-689] width (7) of port connection 'LED2' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-689] width (7) of port connection 'LED3' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-689] width (7) of port connection 'LED4' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-689] width (7) of port connection 'LED5' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-689] width (7) of port connection 'LED6' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-689] width (7) of port connection 'LED7' does not match port width (8) of module 'led_mux' [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:34]
+WARNING: [Synth 8-3848] Net err in module/entity TOP does not have driver. [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:7]
+WARNING: [Synth 8-3848] Net done in module/entity TOP does not have driver. [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:7]
+INFO: [Synth 8-256] done synthesizing module 'TOP' (13#1) [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/TOP.v:1]
+WARNING: [Synth 8-3331] design TOP has unconnected port err
+WARNING: [Synth 8-3331] design TOP has unconnected port done
+WARNING: [Synth 8-3331] design TOP has unconnected port go
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 301.578 ; gain = 95.332
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 301.578 ; gain = 95.332
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/constrs_1/new/constraints.xdc]

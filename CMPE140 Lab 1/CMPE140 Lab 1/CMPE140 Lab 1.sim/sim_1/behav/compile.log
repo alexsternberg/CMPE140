@@ -1,0 +1,18 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/REGISTER.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module REGISTER
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/MUX.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUX
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/MUL.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MUL
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/DOWNCOUNTER.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DOWNCOUNTER
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMP.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CMP
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/BUF.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BUF
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/DP.V" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DP
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.srcs/sources_1/new/DP_TB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DP_TB
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/nykos/src/CMPE140/CMPE140 Lab 1/CMPE140 Lab 1/CMPE140 Lab 1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

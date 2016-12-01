@@ -1,0 +1,25 @@
+////////////////////////////////////////////////////////////////////////////////
+// SubModule DOWNCOUNTER
+// Created   9/7/2016 9:32:41 PM
+////////////////////////////////////////////////////////////////////////////////
+
+module DOWNCOUNTER #(parameter width = 32)(CLK, D, LD, EN, Q);
+
+input  CLK;
+input  [width-1:0] D;
+input  LD;
+input  EN;
+output [width-1:0] Q;
+
+reg [width-1:0] data;
+
+always@(posedge CLK)
+begin
+     if(LD) data = D;
+     if(EN) data = data - 1;
+end
+
+assign Q = data;
+
+endmodule
+////////////////////////////////////////////////////////////////////////////////
