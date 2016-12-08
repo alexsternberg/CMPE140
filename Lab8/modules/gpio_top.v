@@ -8,9 +8,9 @@ module gpio_top(
     wire [1:0] rdsel;
 
 
-    gpio_ad  gpiodec(we, a, we1, we2, rdsel);
-    flopenr reg_gpo1(clk, rst, we1, wd, gpo1);
-    flopenr reg_gpo2(clk, rst, we2, wd, gpo2);
-    mux4      output(gpi1, gpi2, gpo1, gpo2, rdsel, rd);
+    gpio_ad          gpiodec(we, a, we1, we2, rdsel);
+    flopenr  #(32)  reg_gpo1(clk, rst, we1, wd, gpo1);
+    flopenr  #(32)  reg_gpo2(clk, rst, we2, wd, gpo2);
+    mux4     #(32)       out(gpi1, gpi2, gpo1, gpo2, rdsel, rd);
 
 endmodule

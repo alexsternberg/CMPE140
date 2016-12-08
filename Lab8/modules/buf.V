@@ -3,13 +3,13 @@
 // Created   9/7/2016 10:22:08 PM
 ////////////////////////////////////////////////////////////////////////////////
 
-module buffer #(parameter width = 32)(OE, O, I);
+module buffer #(parameter width = 32)(
+input  [width-1:0] i,
+input  oe,
+output [width-1:0] o
+);
 
-input  OE;
-output [width-1:0] O;
-input  [31:0] I;
-
-assign O = OE ? I : 'bZ;
+assign o = oe ? i : 'bZ;
 
 endmodule
 ////////////////////////////////////////////////////////////////////////////////

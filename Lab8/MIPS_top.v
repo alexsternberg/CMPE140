@@ -39,20 +39,23 @@ module mips_top(
         .clk_sec(clksec),
         .clk_5KHz(clk_5KHz)
         );
-        
+  
+  // instantiate device to be tested
+  mips     mips    (clksec, reset, pc, instr, memwrite, dataadr, writedata, readdata, switches[4:0], dispDat);
+  imem     imem    (pc[7:2], instr);
 
-      
-    // Instantiate processor and memories   
-    mips    mips    (clksec, reset, pc, instr, 
-                    memwrite, dataadr, writedata, readdata, switches[4:0], dispDat);
-    imem    imem    (pc[7:2], instr);
+  wire fact_we, mem_we, gpio_we;
+  wire [1:0] rdsel;
+  wire [31:0] fact_mux, mem_mux, gpio_mux, gpo1, gpo2;
+  
+  reg [31:0] gpi1, gpi2;
 
-
-
-
-
-
-    dmem    dmem    (clk, memwrite, dataadr, writedata, readdata);
+  addrdec     dec     (memwrite, dataadr, fact_we, gpio_we, mem_we, rdsel);
+  mux4   #32  mux     (mem_mux,mem_mux,fact_mux,gpio_mux,rdsel, readdata);
+  gpio_top    gpio    (clk, reset, gpio_we, dataadr[3:2], {0,switches}, {0,switches}, writedata, gpo1, gpo2, gpio_mux);
+  fact_top    fact    (clk, reset, fact_we, dataadr[3:2], writedata[3:0], fact_mux);
+  
+  dmem     dmem    (clk, memwrite, dataadr, writedata, mem_mux);
     
 //=======================================================================================================================
 //=======================================================================================================================
@@ -103,7 +106,7 @@ module mips_top(
 */  
     
     always @ (posedge clk) 
-    begin
+    begin/*
         case ({switches[7],switches[6], switches[5]})
             3'b000: reg_hex = dispDat[15:0];
             3'b001: reg_hex = dispDat[31:16];
@@ -114,6 +117,8 @@ module mips_top(
             3'b110: reg_hex = writedata[15:0];
             3'b111: reg_hex = writedata[31:16];
             endcase
+            */
+        reg_hex = readdata[15:0];
     end     
 
     //sink unused bit(s) to knock down the number of warning messages

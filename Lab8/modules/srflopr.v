@@ -1,7 +1,9 @@
 module srflopr(
-       input clk, rst, r, s,
-       output reg q,
+       input clk, rst, s, r,
+       output reg q
 );
+
+initial q = 0;
 
 always @ (posedge clk) begin
        if(s)   q = 1;

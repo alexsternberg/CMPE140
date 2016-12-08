@@ -14,6 +14,8 @@ module aludec(
 				6'b100100: alucontrol <= 3'b000; // AND
 				6'b100101: alucontrol <= 3'b001; // OR
 				6'b101010: alucontrol <= 3'b111; // SLT
+				6'b000000: alucontrol <= 3'b100; // SLL
+				6'b000010: alucontrol <= 3'b101; // SLR
 				default:   alucontrol <= 3'bxxx; // ???
 			endcase
 		endcase

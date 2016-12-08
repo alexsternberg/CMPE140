@@ -14,9 +14,9 @@ module dmem (
 		for (n=0; n<64; n=n+1)
 			ram[n] = 8'hFF;
 		
-	assign dOut = ram[addr[7:2]];
+	assign dOut = ram[addr];
 				
 	always @(posedge clk)
 		if (we) 
-			ram[addr[7:2]] = dIn; 
+			ram[addr] = dIn; 
 endmodule

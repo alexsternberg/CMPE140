@@ -3,7 +3,7 @@
 // Created   9/7/2016 9:32:41 PM
 ////////////////////////////////////////////////////////////////////////////////
 
-module DOWNCOUNTER #(parameter width = 32)(CLK, D, LD, EN, Q);
+module downcounter #(parameter width = 32)(CLK, D, LD, EN, Q);
 
 input  CLK;
 input  [width-1:0] D;

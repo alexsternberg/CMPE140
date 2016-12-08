@@ -31,9 +31,9 @@ module datapath(
 
 	// ALU logic
 	mux2 #(32)		srcbmux(writedata, signimm, alusrc, srcb);
-	alu				alu(srca, srcb, alucontrol, aluout, zero);
+	alu				alu(srca, srcb, instr[10:6], alucontrol, aluout, zero);
 	
-	multiplier		mult(srca, srcb, resultmult);
+	mult     		mult(srca, srcb, resultmult);
 	flopenr #(64)	hilo(clk, reset, regmult, resultmult, hiloout);
 	mux2 #(32)		hilomux(hiloout[31:0], hiloout[63:32], hilotoreg, resulthilo);
 	
